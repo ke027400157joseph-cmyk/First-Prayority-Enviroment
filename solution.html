@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Practical solutions to reduce pollution in Nairobi, from individual actions to industrial policy reforms."/>
+    <title>Solutions & Action Plan | EcoWatch</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <div class="dashboard-container flex h-screen overflow-hidden">
+        
+        <!-- ==========================
+             SIDEBAR NAVIGATION
+             ========================== -->
+        <aside class="sidebar w-64 bg-white shadow-xl flex flex-col z-20 hidden md:flex">
+            <div class="logo-area p-6 flex items-center gap-3 border-b">
+                <i class="fa-solid fa-leaf text-green-500 text-2xl"></i>
+                <h2 class="text-xl font-bold text-gray-800">EcoWatch</h2>
+            </div>
+            
+            <nav class="nav-links flex-1 overflow-y-auto py-4">
+                <a href="index.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> 
+                    <span>Dashboard</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <i class="fa-solid fa-circle-info"></i> 
+                    <span>About</span>
+                </a>
+                <a href="projects.html" class="nav-item">
+                    <i class="fa-solid fa-briefcase"></i> 
+                    <span>Projects</span>
+                </a>
+                <a href="gallery.html" class="nav-item">
+                    <i class="fa-solid fa-images"></i> 
+                    <span>Gallery</span>
+                </a>
+                <a href="industrial-zones.html" class="nav-item">
+                    <i class="fa-solid fa-industry"></i> 
+                    <span>Industrial Zones</span>
+                </a>
+
+                <!-- Solutions Link (ACTIVE) -->
+                <a href="solution.html" class="nav-item active">
+                    <i class="fa-solid fa-lightbulb"></i> 
+                    <span>Solutions</span>
+                </a>
+
+                <a href="contact.html" class="nav-item">
+                    <i class="fa-solid fa-envelope"></i> 
+                    <span>Contact</span>
+                </a>
+            </nav>
+
+            <div class="user-profile p-4 border-t bg-gray-50">
+                <div class="flex items-center gap-3">
+                    <div class="avatar w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">JO</div>
+                    <div class="user-info">
+                        <p class="name text-sm font-semibold">Joseph Ocnieng</p>
+                        <p class="role text-xs text-gray-500">Lead Developer</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ==========================
+             MAIN CONTENT AREA
+             ========================== -->
+        <main class="main-content flex-1 flex flex-col h-screen overflow-hidden relative">
+            
+            <!-- Top Header -->
+            <header class="top-header bg-white shadow-sm p-4 flex justify-between items-center z-10">
+                <div class="page-title">
+                    <h1 class="text-lg font-bold text-gray-800">Solutions & Action Plan</h1>
+                    <p class="text-xs text-gray-500 hidden sm:block">From daily habits to national policy reforms.</p>
+                </div>
+                <div class="header-actions flex items-center gap-3">
+                    <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" title="Toggle Dark Mode">
+                        <i class="fas fa-moon text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                    <a href="index.html" class="text-sm text-green-600 hover:underline font-medium hidden sm:block">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+                    </a>
+                </div>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="content-scroll flex-1 overflow-y-auto p-6 scroll-smooth">
+                
+                <!-- Hero Header -->
+                <section class="bg-gradient-to-r from-green-600 to-emerald-800 rounded-xl p-8 text-white shadow-lg mb-8">
+                    <h1 class="text-3xl font-bold mb-2">🌿 Solutions to Industrial & Air Pollution</h1>
+                    <p class="opacity-90 text-lg mb-4">From daily habits to national policy — real steps being taken in Nairobi (2025–2026)</p>
+                    <a href="index.html" class="inline-block bg-white text-green-700 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition text-sm">
+                        ← Back to Dashboard
+                    </a>
+                </section>
+
+                <!-- Context Section -->
+                <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800">
+                        <i class="fas fa-flag-checkered text-green-600"></i> Kenya & Nairobi's Momentum (2025–2026)
+                    </h2>
+                    <p class="text-gray-600 mb-4">Nairobi is stepping up with concrete actions:</p>
+                    <ul class="space-y-3 mb-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-scroll text-blue-500 mt-1"></i>
+                            <span><strong>Air Quality Action Plan (2025–2029):</strong> 5-year roadmap targeting transport, industry & waste.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-chart-bar text-purple-500 mt-1"></i>
+                            <span><strong>Public Air Quality Portal:</strong> Real-time data from 50+ sensors empowering residents.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-robot text-orange-500 mt-1"></i>
+                            <span><strong>NEMA KOCEMS (Launch 2026):</strong> Kenya Online Continuous Emissions Monitoring System — IoT + AI for 24/7 industrial tracking.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-gavel text-red-500 mt-1"></i>
+                            <span><strong>Stronger Enforcement:</strong> Shutting non-compliant factories & promoting circular economy.</span>
+                        </li>
+                    </ul>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                        <p class="text-sm text-blue-800"><strong>Note:</strong> Progress is real, but implementation & informal sector inclusion remain key challenges.</p>
+                    </div>
+                </section>
+
+                <!-- Interactive Tabs -->
+                <section class="mb-8">
+                    <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-1">
+                        <button class="tab-btn active px-6 py-3 font-semibold text-sm rounded-t-lg transition bg-green-600 text-white" data-tab="individual">
+                            👤 Individual Actions
+                        </button>
+                        <button class="tab-btn px-6 py-3 font-semibold text-sm rounded-t-lg transition bg-white text-gray-600 hover:bg-gray-100" data-tab="industrial">
+                            🏭 Industrial Solutions
+                        </button>
+                        <button class="tab-btn px-6 py-3 font-semibold text-sm rounded-t-lg transition bg-white text-gray-600 hover:bg-gray-100" data-tab="policy">
+                            🏛️ Policy & Tech
+                        </button>
+                    </div>
+
+                    <div class="tabs-content">
+                        
+                        <!-- Tab 1: Individual -->
+                        <div class="tab-pane active" id="individual">
+                            <h3 class="text-lg font-bold mb-4 text-gray-800">🌱 What You Can Do Right Now</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Card 1 -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition relative">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-shopping-bag"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Reduce Plastic Usage</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Minimize single-use plastics. Switch to reusable bags, bottles, and containers.</p>
+                                    <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Easy</span>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition relative">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-tree"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Plant More Trees</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Trees act as natural air filters. Plant native species or support greening projects.</p>
+                                    <span class="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Medium</span>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition relative">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-bolt"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Save Energy</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Switch to LED bulbs and unplug devices. Reduces demand on diesel generators.</p>
+                                    <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Easy</span>
+                                </div>
+                                <!-- Card 4 -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition relative">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-recycle"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Recycle & Reuse</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Properly recycle paper, plastics, and metals. Avoid open burning of waste.</p>
+                                    <span class="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded">Medium</span>
+                                </div>
+                                <!-- Card 5 -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition relative">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-bus"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Use Public Transport</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Take the bus, train, or carpool. Reducing private vehicles cuts traffic emissions.</p>
+                                    <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Easy</span>
+                                </div>
+                                <!-- Card 6 -->
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition relative">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl mb-4"><i class="fas fa-bullhorn"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Community Awareness</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Educate neighbors about pollution prevention. Report illegal smoke via NEMA.</p>
+                                    <span class="absolute top-4 right-4 bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded">Hard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Industrial -->
+                        <div class="tab-pane hidden" id="industrial">
+                            <h3 class="text-lg font-bold mb-4 text-gray-800">🏭 Transforming Industry</h3>
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">1. Adopt Cleaner Production Technologies</h4>
+                                    <p class="text-gray-600 mb-3">Shift informal "jua kali" & formal industries to low-emission methods.</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1 mb-3">
+                                        <li>Install <strong>filters, scrubbers, and low-NOx burners</strong>.</li>
+                                        <li>Switch fuels: Move from heavy oil/coal to <strong>natural gas or renewables</strong>.</li>
+                                        <li>Adopt <strong>circular economy</strong>: Recycle water & materials within the factory.</li>
+                                    </ul>
+                                    <div class="bg-green-50 text-green-800 text-sm p-3 rounded-lg inline-block">
+                                        💡 <strong>Impact:</strong> Can cut industrial PM2.5 by 30–70% while saving energy costs.
+                                    </div>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">2. Regulate & Relocate High-Pollution Activities</h4>
+                                    <p class="text-gray-600 mb-3">Target dirty processes in populated areas.</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li><strong>Strict Zoning:</strong> Move cement kilns and smelters farther from homes (e.g., Athi River model).</li>
+                                        <li><strong>Eco-Industrial Parks:</strong> Cluster industries with shared waste treatment (e.g., Tatu City).</li>
+                                        <li><strong>Phase Out Open Burning:</strong> Eliminate unsafe waste disposal in Dandora/Kariobangi.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3: Policy -->
+                        <div class="tab-pane hidden" id="policy">
+                            <h3 class="text-lg font-bold mb-4 text-gray-800">🏛️ Policy & Technology</h3>
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">1. Stronger Monitoring (KOCEMS)</h4>
+                                    <p class="text-gray-600 mb-3">Real-time digital tools give regulators 24/7 visibility into factory emissions.</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li>Mandatory <strong>Continuous Emission Monitoring Systems (CEMS)</strong> on major polluters.</li>
+                                        <li>Automated fines & shutdowns for non-compliance.</li>
+                                        <li>Expand low-cost sensor networks in hotspots (Viwandani, Industrial Area).</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">2. Community & Business Involvement</h4>
+                                    <p class="text-gray-600 mb-3">Bottom-up action works best.</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li><strong>Reporting Apps:</strong> Enable citizens to report illegal smoke instantly.</li>
+                                        <li><strong>Green Incentives:</strong> Tax breaks for factories adopting clean tech.</li>
+                                        <li><strong>Public-Private Partnerships:</strong> Joint monitoring initiatives (like Sameer Business Park).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Impact Calculator -->
+                <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                    <h2 class="text-xl font-bold mb-2 flex items-center gap-2 text-gray-800">
+                        <i class="fas fa-calculator text-blue-500"></i> Calculate Your Impact
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-sm">See how switching just 2 car trips a week to public transport helps.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Car Trips per Week:</label>
+                                <input type="number" id="car-trips" value="5" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Bus/Matatu Trips per Week:</label>
+                                <input type="number" id="bus-trips" value="2" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                            </div>
+                            <button id="calc-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition shadow-md">
+                                Calculate Savings
+                            </button>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-xl p-6 flex flex-col justify-center space-y-4">
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+                                <span class="text-sm text-gray-600">Potential CO₂ Saved/Month:</span>
+                                <span class="text-2xl font-bold text-green-600" id="co2-saved">0 kg</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Equivalent Trees Planted:</span>
+                                <span class="text-2xl font-bold text-blue-600" id="trees-equiv">0</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-2 text-center">*Based on average emission factors for Nairobi traffic.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="bg-gradient-to-r from-orange-500 to-red-600 rounded-xl p-8 text-white text-center shadow-lg mb-8">
+                    <h2 class="text-2xl font-bold mb-2">Ready to Act?</h2>
+                    <p class="mb-6 opacity-90">Join the movement for cleaner air in Nairobi.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="https://www.nema.go.ke" target="_blank" class="bg-white text-orange-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition shadow-md">
+                            Report Pollution (NEMA)
+                        </a>
+                        <a href="index.html" class="bg-orange-700 bg-opacity-50 border border-white text-white font-bold py-3 px-6 rounded-full hover:bg-opacity-70 transition">
+                            View Live Data
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="text-center text-sm text-gray-500 pb-8 border-t border-gray-200 pt-8">
+                    <p class="mb-2">Environmental Conservation Project | School Symposium</p>
+                    <p class="mb-4 text-xs">Data based on Nairobi County Plans, NEMA Initiatives (2026) & Global Best Practices</p>
+                    <div class="flex justify-center gap-4 text-xs">
+                        <a href="index.html" class="hover:text-green-600">Dashboard</a>
+                        <a href="industrial-zones.html" class="hover:text-green-600">Industrial Zones</a>
+                        <a href="about.html" class="hover:text-green-600">About</a>
+                    </div>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

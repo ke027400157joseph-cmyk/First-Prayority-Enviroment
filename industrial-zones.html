@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze pollution data from Nairobi's key industrial zones: Industrial Area, Athi River, Dandora, and more.">
+    <title>Industrial Zones | EcoWatch Analytics</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Data Viz -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> Eco<span>Watch</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">Mission</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="industrial-zones.html" class="nav-link active">Zones</a></li>
+                <li><a href="contact.html" class="btn-primary nav-link">Report Issue</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Industrial Zones Analysis</h1>
+            <p class="fade-in delay-1">Tracking emissions, PM2.5 levels, and environmental impact across Nairobi's key industrial hubs.</p>
+        </div>
+    </header>
+
+    <!-- Context Section -->
+    <section class="section">
+        <div class="container">
+            <div class="info-box fade-on-scroll">
+                <div class="info-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Why Focus on Industrial Zones?</h3>
+                    <p>While traffic is a major contributor, <strong>industrial activities account for ~15% of Nairobi's PM2.5</strong>. These zones often neighbor residential areas, creating significant health risks due to unchecked emissions of SO₂, NO₂, and heavy metals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics Grid (Visual Cards) -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Air Quality Index (AQI)</h2>
+                <div class="underline"></div>
+                <p>Real-time estimates across major East African industrial hubs.</p>
+            </div>
+            
+            <div class="aqi-grid">
+                <!-- Card 1: Nairobi Industrial (High Risk) -->
+                <div class="aqi-card fade-on-scroll risk-high">
+                    <div class="aqi-bg" style="background-image: url('https://images.unsplash.com/photo-1591193686104-fddba4d0e4d8?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="aqi-overlay"></div>
+                    <div class="aqi-content">
+                        <h3>Nairobi Industrial Area</h3>
+                        <span class="aqi-badge">Unhealthy</span>
+                        <div class="aqi-value">165</div>
+                        <p>PM2.5 Avg (μg/m³)</p>
+                        <a href="#details" class="aqi-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Athi River (Moderate-High) -->
+                <div class="aqi-card fade-on-scroll risk-mod-high">
+                    <div class="aqi-bg" style="background-image: url('https://images.unsplash.com/photo-1599939571322-792a326991f2?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="aqi-overlay"></div>
+                    <div class="aqi-content">
+                        <h3>Athi River / EPZ</h3>
+                        <span class="aqi-badge">Moderate-High</span>
+                        <div class="aqi-value">138</div>
+                        <p>Cement & Steel Dust</p>
+                        <a href="#details" class="aqi-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Dandora (Critical) -->
+                <div class="aqi-card fade-on-scroll risk-critical">
+                    <div class="aqi-bg" style="background-image: url('https://images.unsplash.com/photo-1534234828563-02511c750b63?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="aqi-overlay"></div>
+                    <div class="aqi-content">
+                        <h3>Dandora Dumpsite</h3>
+                        <span class="aqi-badge">Hazardous</span>
+                        <div class="aqi-value">210+</div>
+                        <p>Burning & Recycling</p>
+                        <a href="#details" class="aqi-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Kigali (Comparison - Good) -->
+                <div class="aqi-card fade-on-scroll risk-good">
+                    <div class="aqi-bg" style="background-image: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="aqi-overlay"></div>
+                    <div class="aqi-content">
+                        <h3>Kigali (Reference)</h3>
+                        <span class="aqi-badge">Good</span>
+                        <div class="aqi-value">45</div>
+                        <p>Strict Regulations</p>
+                        <a href="#details" class="aqi-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pollution Data Insights</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="charts-grid">
+                <!-- Chart 1: PM2.5 Comparison -->
+                <div class="chart-card fade-on-scroll">
+                    <h3>PM2.5 Comparison (μg/m³)</h3>
+                    <div class="chart-container">
+                        <canvas id="pm25Chart"></canvas>
+                    </div>
+                    <p class="chart-note">*Data represents 30-day averages for 2026.</p>
+                </div>
+
+                <!-- Chart 2: Pollutant Breakdown -->
+                <div class="chart-card fade-on-scroll">
+                    <h3>Pollutant Breakdown: Industrial Area</h3>
+                    <div class="chart-container">
+                        <canvas id="breakdownChart"></canvas>
+                    </div>
+                    <p class="chart-note">*Primary sources: Manufacturing, Vehicle Idling, Waste Burning.</p>
+                </div>
+            </div>
+
+            <!-- Chart 3: Trend Line (Full Width) -->
+            <div class="chart-card full-width fade-on-scroll">
+                <h3>30-Day Pollution Trend (Nairobi Industrial Zone)</h3>
+                <div class="chart-container-large">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Zone Cards -->
+    <section id="details" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Zone Profiles</h2>
+                <div class="underline"></div>
+                <p>Detailed breakdown of activities and specific risks per zone.</p>
+            </div>
+
+            <div class="zones-list">
+                <!-- Zone 1 -->
+                <div class="zone-detail-card fade-on-scroll">
+                    <div class="zone-header">
+                        <h3>1. Nairobi Industrial Area (Central)</h3>
+                        <span class="risk-tag high">High Risk</span>
+                    </div>
+                    <div class="zone-body">
+                        <div class="zone-info">
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> South-central Nairobi, near Mombasa Road.</p>
+                            <p><i class="fas fa-industry"></i> <strong>Activities:</strong> Metal works, chemical processing, food manufacturing, textiles.</p>
+                        </div>
+                        <div class="zone-risks">
+                            <h4>Key Risks:</h4>
+                            <ul>
+                                <li>High PM2.5 from informal "jua kali" welding.</li>
+                                <li>Chemical runoff into Nairobi River.</li>
+                                <li>Diesel generator reliance during power outages.</li>
+                            </ul>
+                        </div>
+                        <div class="zone-action">
+                            <button class="btn-outline" onclick="alert('Redirecting to live sensor data...')">Check Live Sensors</button>
+                            <a href="contact.html" class="btn-text">Report Violation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zone 2 -->
+                <div class="zone-detail-card fade-on-scroll">
+                    <div class="zone-header">
+                        <h3>2. Athi River / Export Processing Zone</h3>
+                        <span class="risk-tag mod-high">Moderate-High</span>
+                    </div>
+                    <div class="zone-body">
+                        <div class="zone-info">
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> ~25km SE of Nairobi.</p>
+                            <p><i class="fas fa-industry"></i> <strong>Activities:</strong> Cement production, steel mills, large-scale manufacturing.</p>
+                        </div>
+                        <div class="zone-risks">
+                            <h4>Key Risks:</h4>
+                            <ul>
+                                <li>Fugitive dust from cement kilns.</li>
+                                <li>Heavy truck traffic congestion.</li>
+                                <li>Regional haze contribution.</li>
+                            </ul>
+                        </div>
+                        <div class="zone-action">
+                            <button class="btn-outline" onclick="alert('Redirecting to live sensor data...')">Check Live Sensors</button>
+                            <a href="contact.html" class="btn-text">Report Violation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zone 3 -->
+                <div class="zone-detail-card fade-on-scroll">
+                    <div class="zone-header">
+                        <h3>3. Dandora & Kariobangi</h3>
+                        <span class="risk-tag critical">Critical</span>
+                    </div>
+                    <div class="zone-body">
+                        <div class="zone-info">
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> East Nairobi.</p>
+                            <p><i class="fas fa-recycle"></i> <strong>Activities:</strong> Informal recycling, plastic melting, e-waste burning.</p>
+                        </div>
+                        <div class="zone-risks">
+                            <h4>Key Risks:</h4>
+                            <ul>
+                                <li>Toxic fumes from burning plastics/e-waste.</li>
+                                <li>Heavy metal contamination in soil/water.</li>
+                                <li>Proximity to dense residential settlements.</li>
+                            </ul>
+                        </div>
+                        <div class="zone-action">
+                            <button class="btn-outline" onclick="alert('Redirecting to live sensor data...')">Check Live Sensors</button>
+                            <a href="contact.html" class="btn-text">Report Violation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box fade-on-scroll">
+                <h2>See Something Wrong?</h2>
+                <p>Community reporting is vital for enforcement. If you see illegal dumping or black smoke, report it to NEMA or via our platform.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary">Report Incident</a>
+                    <a href="solution.html" class="btn-secondary">View Solutions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>EcoWatch</h3>
+                <p>Data-driven environmental action for Nairobi and East Africa.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="industrial-zones.html">Industrial Zones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> hello@ecowatch.ke</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoWatch Initiative. Built for the Coders' Symposium by Joseph Ocnieng.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

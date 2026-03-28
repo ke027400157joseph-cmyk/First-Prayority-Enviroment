@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | EcoWatch</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <div class="dashboard-container flex h-screen overflow-hidden">
+        
+        <!-- ==========================
+             SIDEBAR NAVIGATION
+             ========================== -->
+        <aside class="sidebar w-64 bg-white shadow-xl flex flex-col z-20 hidden md:flex">
+            <div class="logo-area p-6 flex items-center gap-3 border-b">
+                <i class="fa-solid fa-leaf text-green-500 text-2xl"></i>
+                <h2 class="text-xl font-bold text-gray-800">EcoWatch</h2>
+            </div>
+            
+            <nav class="nav-links flex-1 overflow-y-auto py-4">
+                <a href="index.html" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> 
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="about.html" class="nav-item">
+                    <i class="fa-solid fa-circle-info"></i> 
+                    <span>About</span>
+                </a>
+
+                <a href="projects.html" class="nav-item">
+                    <i class="fa-solid fa-briefcase"></i> 
+                    <span>Projects</span>
+                </a>
+
+                <!-- Gallery Link (ACTIVE) -->
+                <a href="gallery.html" class="nav-item active">
+                    <i class="fa-solid fa-images"></i> 
+                    <span>Gallery</span>
+                </a>
+
+                <!-- Fixed Icons -->
+                <a href="industrial-zones.html" class="nav-item">
+                    <i class="fa-solid fa-industry"></i> 
+                    <span>Industrial Zones</span>
+                </a>
+
+                <a href="solution.html" class="nav-item">
+                    <i class="fa-solid fa-lightbulb"></i> 
+                    <span>Solutions</span>
+                </a>
+
+                <a href="contact.html" class="nav-item">
+                    <i class="fa-solid fa-envelope"></i> 
+                    <span>Contact</span>
+                </a>
+            </nav>
+
+            <div class="user-profile p-4 border-t bg-gray-50">
+                <div class="flex items-center gap-3">
+                    <div class="avatar w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">JO</div>
+                    <div class="user-info">
+                        <p class="name text-sm font-semibold">Joseph Ocnieng</p>
+                        <p class="role text-xs text-gray-500">Lead Developer</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ==========================
+             MAIN CONTENT AREA
+             ========================== -->
+        <main class="main-content flex-1 flex flex-col h-screen overflow-hidden relative">
+            
+            <!-- Top Header -->
+            <header class="top-header bg-white shadow-sm p-4 flex justify-between items-center z-10">
+                <div class="page-title">
+                    <h1 class="text-lg font-bold text-gray-800">Project Gallery</h1>
+                    <p class="text-xs text-gray-500 hidden sm:block">Visual stories from the frontlines of the pollution fight.</p>
+                </div>
+                <div class="header-actions flex items-center gap-4">
+                    <select id="themeSelector" class="border border-gray-300 rounded-md text-sm px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="light">Light Theme</option>
+                        <option value="forest">Forest Theme</option>
+                        <option value="ocean">Ocean Theme</option>
+                    </select>
+                    <button class="icon-btn" title="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge">1</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="content-scroll flex-1 overflow-y-auto p-6 scroll-smooth">
+                
+                <!-- Hero Banner -->
+                <section class="hero-banner mb-8 bg-gradient-to-r from-green-600 to-emerald-800 rounded-xl p-8 text-white shadow-lg">
+                    <div class="max-w-3xl">
+                        <h2 class="text-3xl font-bold mb-3">Visual Stories from the Frontlines</h2>
+                        <p class="opacity-90 text-lg">
+                            See the real impact — Nairobi air sensors, green corridors, community cleanups, workshops, and data visualizations across East Africa.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Filter Buttons -->
+                <section class="filter-section mb-8 flex flex-wrap gap-3">
+                    <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition bg-green-600 text-white" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition bg-white text-gray-600 hover:bg-gray-100 border border-gray-200" data-filter="fieldwork">Fieldwork</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition bg-white text-gray-600 hover:bg-gray-100 border border-gray-200" data-filter="community">Community</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition bg-white text-gray-600 hover:bg-gray-100 border border-gray-200" data-filter="air-quality">Air Quality</button>
+                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition bg-white text-gray-600 hover:bg-gray-100 border border-gray-200" data-filter="data">Data & Infographics</button>
+                </section>
+
+                <!-- Gallery Grid -->
+                <section class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12" id="galleryGrid">
+                    
+                    <!-- Item 1 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="fieldwork">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Community tree planting" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">Urban Reforestation</h3>
+                                <p class="text-gray-300 text-sm">Planting native trees to combat PM2.5</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="community">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="River cleanup volunteers" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">River Cleanup Event</h3>
+                                <p class="text-gray-300 text-sm">Removing plastic waste from Nairobi River</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="air-quality">
+                        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" alt="Air quality sensor" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">Sensor Installation</h3>
+                                <p class="text-gray-300 text-sm">Placing low-cost monitors in high-traffic zones</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="data">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data visualization" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">PM2.5 Trends Dashboard</h3>
+                                <p class="text-gray-300 text-sm">Visualizing real-time air quality data</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="community">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Workshop" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">School Air Awareness</h3>
+                                <p class="text-gray-300 text-sm">Educating students about pollution risks</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="fieldwork air-quality">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Green corridor" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">Green Corridor</h3>
+                                <p class="text-gray-300 text-sm">Creating low-emission green belts</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="air-quality">
+                        <img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&w=800&q=80" alt="Clean cookstove" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">Clean Cooking</h3>
+                                <p class="text-gray-300 text-sm">Distributing efficient stoves in settlements</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="gallery-item group relative rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition" data-category="data air-quality">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Industrial emissions" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                            <div class="info transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                                <h3 class="text-white font-bold text-lg">Emissions Insights</h3>
+                                <p class="text-gray-300 text-sm">Real-time monitoring data from facilities</p>
+                            </div>
+                            <button class="view-btn absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-white hover:text-green-600 transition"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4">
+                    <span class="close-lightbox absolute top-6 right-8 text-white text-4xl cursor-pointer hover:text-gray-300">&times;</span>
+                    <img class="lightbox-content max-h-[80vh] max-w-full rounded-lg shadow-2xl" id="lightbox-img" alt="Full size">
+                    <div class="lightbox-caption absolute bottom-10 text-white text-center text-lg font-medium" id="lightbox-caption"></div>
+                    <div class="lightbox-nav prev absolute left-4 text-white text-3xl cursor-pointer hover:text-gray-300">&#10094;</div>
+                    <div class="lightbox-nav next absolute right-4 text-white text-3xl cursor-pointer hover:text-gray-300">&#10095;</div>
+                </div>
+
+                <!-- CTA Section -->
+                <section class="cta-section bg-gradient-to-r from-red-600 to-orange-600 rounded-xl p-8 text-white text-center mb-8 shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">See the Change — Be the Change</h2>
+                    <p class="mb-6 opacity-90">These images show real people, real actions, real impact. Join us to create more stories worth capturing.</p>
+                    <a href="contact.html" class="inline-block bg-white text-red-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-md">Get Involved Today <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                </section>
+
+                <!-- Footer -->
+                <footer class="text-center text-sm text-gray-500 pb-8">
+                    <p>© 2026 EcoWatch Project • Built for the Coders' Symposium by Joseph Ocnieng</p>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
